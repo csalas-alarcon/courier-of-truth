@@ -5,21 +5,22 @@ services:
     build: ./server
     container_name: fastapi_server
     ports:
-    - "8000:8000"
+      - "8000:8000"
+    environment:
+      LLAMA_SERVER_URL: "http://llama_server:8080"
     depends_on:
       - llama_server
-    environment:
-      LLAMA_SERVER_URL: "http://llama_server:11343"
     networks:
       - backend_net
-  
+
   llama_server:
     image: ghcr.io/ggml-org/llama.cpp:server
+    container_name: llama_server
     ports:
-      - "11343:11343"
+      - "8080:8080"
     volumes:
-      - ./models:/models  # Host models folder mounted inside container
-    command: ["--models-dir", "/models", "-ctx", "8192", "-n", "1024"]
+      - ./models:/models
+    command: ["--models-dir", "/models"]
     networks:
       - backend_net
 

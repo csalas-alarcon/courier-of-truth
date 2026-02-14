@@ -1,5 +1,12 @@
-# Runarium
+# SES Courier of Truth
 
-### LLM Inference on the Cloud
+![image](static/lest.png)
 
-This is a Proof of Concept Web App made entirely by Me to convert my ideas into real projects.
+### In honour of those have given their life for Super Eath:
+We made Courier of Truth to convey the tales of our Many Victories and our very few setbacks.
+
+With this liberty-infused LLM we aspire to store and understand all the sacrifice needed for victory.
+
+### Free Omniparitus
+
+# Documentation

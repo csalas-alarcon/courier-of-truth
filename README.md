@@ -10,3 +10,11 @@ With this liberty-infused LLM we aspire to store and understand all the sacrific
 ### Free Omniparitus
 
 # Documentation
+
+# Apendix
+
+### Auxiliar Commands
+The Tree command can be susbstitued by:
+```
+find | sed 's|[^/]*/|- |g'
+```

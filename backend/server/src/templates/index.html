@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Main page</title>
+    <title>Our History</title>
 </head>
 <body>
     <h1>We are the Courier of Truth</h1>
@@ -10,5 +10,11 @@
     
     <h2>Listen to This Speech:</h2>
     <p>{{ llama_output }}</p>
+    
+    <a href="{{ url_for('get_speech') }}">Click me - Spartans</a>
+    <p>{{ speech }}</p>
+
+    <a href="{{ url_for('get_manager') }}">Click me - Manager</a>
+    <p>{{ talk }}</p>
 </body>
 </html>

@@ -19,6 +19,8 @@ templates = Jinja2Templates(directory="src/templates")
 LLAMA_URL = "http://llama_server:8080"
 MODEL_NAME = "qwen" 
 PETITION = "Give a speech against some assasin robots called 'Automatons'. They're very dangerous."
+INSPIRATION = "WE ARE THE SPARTANS, WE DECIDE WHO COMES TRHOUGH CYBERSTAN AND WHO DOESN'T. Follow the Speech"
+MANAGER = "We're very proud to have our Millionth Employee. We will hire everyone on Earth."
 
 # FUNCTIONS
 def query(prompt: str):
@@ -53,3 +55,21 @@ def normal(request: Request):
 
     # Return the Page
     return templates.TemplateResponse("index.html",{"request": request, "llama_output": llama_text})
+
+@app.get("/speech")
+def get_speech(request: Request):
+    try:
+        speech = query(INSPIRATION)
+    except Exception as e:
+        speech = f"LLAMA ERROR: {e}"
+
+    return templates.TemplateResponse("index.html", {"request": request, "speech": speech})
+
+@app.get("/manager")
+def get_manager(request: Request):
+    try:
+        talk = query(MANAGER)
+    except Exception as e:
+        talk = f"LLAMA ERROR: {e}"
+
+    return templates.TemplateResponse("index.html", {"request": request, "talk": talk})
